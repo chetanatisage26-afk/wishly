@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f7">
+  <meta name="description" content="Create a beautiful five-page greeting story with Wishly.">
+  <title>Wishly — Little Cards, Big Feelings ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="Wishly home">
+      <span class="logo-icon">♡</span> wishly<span class="logo-dot">.</span>
+    </a>
+    <nav>
+      <a href="#categories">Categories</a>
+      <a href="#studio">Create a card</a>
+    </nav>
+    <a class="header-cta" href="#studio">Make a wish ✨</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">A LITTLE CORNER OF HAPPINESS</span>
+        <h1>Some feelings deserve<br>more than <span>one page.</span></h1>
+        <p>Create a five-page greeting story filled with heartfelt words, favourite pictures, and little moments that matter.</p>
+        <a class="primary-button" href="#studio">Create your story <span>→</span></a>
+        <div class="hero-note"><span>♡</span> Made with love. Just for someone special.</div>
+      </div>
+      <div class="hero-art" aria-label="Decorative greeting card illustration">
+        <div class="sparkle sparkle-one">✦</div>
+        <div class="sparkle sparkle-two">✧</div>
+        <div class="floating-heart">♥</div>
+        <div class="hero-card hero-card-back"></div>
+        <div class="hero-card hero-card-front">
+          <span class="hero-card-flower">🌷</span>
+          <span class="hero-card-small">A LITTLE NOTE FOR YOU</span>
+          <strong>You make<br>life sweeter.</strong>
+          <span class="hero-card-heart">♡</span>
+          <span class="hero-card-footer">turn the page for more love</span>
+        </div>
+        <div class="hero-sticker">5 pages<br>of feelings ♡</div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">WHAT'S THE OCCASION?</span>
+          <h2>Choose your <span>feeling.</span></h2>
+        </div>
+        <p>Every feeling has a little story.</p>
+      </div>
+      <div class="topic-grid" id="topicGrid"></div>
+    </section>
+
+    <section class="studio-section" id="studio">
+      <div class="section-heading studio-heading">
+        <div>
+          <span class="eyebrow">YOUR LITTLE CREATIVE STUDIO</span>
+          <h2>Make it <span>personal.</span></h2>
+        </div>
+        <p>Five pages. Your words. Your memories.</p>
+      </div>
+
+      <div class="studio-layout">
+        <section class="panel editor-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">STEP 01</span>
+              <h3>Tell your story</h3>
+            </div>
+            <span class="panel-icon">✎</span>
+          </div>
+
+          <div class="field">
+            <label for="recipient">Who is this for?</label>
+            <input id="recipient" type="text" maxlength="60" placeholder="e.g. My favourite person">
+          </div>
+
+          <div class="field">
+            <label for="sender">Your name</label>
+            <input id="sender" type="text" maxlength="60" placeholder="e.g. With love, Chetana">
+          </div>
+
+          <div class="field">
+            <label for="cardTheme">Choose a colour mood</label>
+            <select id="cardTheme">
+              <option value="pink">Cotton Candy Pink</option>
+              <option value="lavender">Lavender Dreams</option>
+              <option value="cream">Vanilla Cream</option>
+              <option value="peach">Peach Blossom</option>
+              <option value="night">Midnight Romance</option>
+              <option value="mint">Mint Garden</option>
+              <option value="rose">Rose Garden</option>
+              <option value="sky">Dreamy Sky</option>
+              <option value="berry">Berry Sweet</option>
+              <option value="gold">Golden Glow</option>
+            </select>
+          </div>
+
+          <div class="editor-divider"></div>
+
+          <div class="panel-heading page-heading">
+            <div>
+              <span class="eyebrow">STEP 02</span>
+              <h3>Edit each page</h3>
+            </div>
+            <span class="page-count" id="editorPageLabel">Page 1 of 5</span>
+          </div>
+
+          <div class="page-editor-nav">
+            <button type="button" class="secondary-button" id="editorPrev">← Previous</button>
+            <span id="editorProgress">1 / 5</span>
+            <button type="button" class="secondary-button" id="editorNext">Next →</button>
+          </div>
+
+          <div class="field">
+            <label for="message">Message for this page</label>
+            <textarea id="message" maxlength="600" rows="5" placeholder="Write something from your heart..."></textarea>
+            <div class="field-hint"><span id="charCount">0</span>/600 characters</div>
+          </div>
+
+          <div class="field">
+            <label for="pagePhoto">Add a picture to this page (optional)</label>
+            <input id="pagePhoto" type="file" accept="image/*">
+            <p class="field-hint">Choose a picture from your device. Maximum 5 MB per picture.</p>
+            <button type="button" class="text-button" id="removePhoto">Remove picture</button>
+          </div>
+
+          <div class="editor-divider"></div>
+
+          <div class="panel-heading design-heading">
+            <div>
+              <span class="eyebrow">STEP 03</span>
+              <h3>Pick a design</h3>
+            </div>
+          </div>
+          <div class="design-grid" id="designGrid"></div>
+
+          <div class="editor-actions">
+            <button type="button" class="primary-button full-button" id="shareButton">Share my story ♡</button>
+            <button type="button" class="secondary-button full-button" id="copyButton">Copy share link</button>
+            <button type="button" class="secondary-button full-button" id="printButton">Print / Save as PDF</button>
+          </div>
+          <p class="privacy-note">♡ Your uploaded pictures stay in this browser. They are not uploaded to a server.</p>
+        </section>
+
+        <section class="preview-column">
+          <div class="preview-topline">
+            <div>
+              <span class="eyebrow">YOUR STORY, COME TO LIFE</span>
+              <h3>Live preview</h3>
+            </div>
+            <span class="live-badge"><span></span> LIVE</span>
+          </div>
+
+          <div class="preview-stage">
+            <div class="preview-sparkle preview-sparkle-one">✧</div>
+            <div class="preview-sparkle preview-sparkle-two">✦</div>
+            <article class="greeting-card theme-pink" id="cardPreview">
+              <div class="storybook-page" id="storybookPage">
+                <div class="card-top-decor" id="previewEmoji">🌷</div>
+                <div class="preview-kicker" id="previewKicker">A LITTLE NOTE FOR YOU</div>
+                <h3 id="previewRecipient">Someone Special</h3>
+                <img id="previewPhoto" class="page-photo" alt="Picture added to this card page" hidden>
+                <div class="preview-divider">✦ ♡ ✦</div>
+                <p id="previewMessage">Your special message will appear here.</p>
+                <div class="preview-from" id="previewSender">With love ♡</div>
+                <div class="card-bottom-decor">✿ · ✧ · ✿</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="storybook-navigation">
+            <button type="button" class="secondary-button" id="previewPrev">← Back</button>
+            <span id="previewPageLabel">1 / 5</span>
+            <button type="button" class="primary-button" id="previewNext">Next page →</button>
+          </div>
+
+          <div class="page-dots" id="pageDots" aria-label="Select a page"></div>
+          <p class="preview-tip">Tip: select any page, then edit its message or add a picture. ♡</p>
+
+          <div class="share-info">
+            <span class="share-info-icon">✉</span>
+            <div>
+              <strong>A story worth sharing</strong>
+              <p>Your share link keeps your five text messages, names, colour mood, and design. Local photos are not included in the link.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="closing-note">
+      <span>♡</span>
+      <h2>Little cards. <em>Big feelings.</em></h2>
+      <p>Sometimes the smallest words mean the most.</p>
+      <a class="primary-button" href="#studio">Create a little magic ↑</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo" href="#">♡ wishly<span class="logo-dot">.</span></a>
+    <p>Made with a little love and a lot of heart.</p>
+    <span>© <span id="currentYear"></span> Wishly</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="print-story" id="printStory" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
